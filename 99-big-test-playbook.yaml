@@ -1,0 +1,16 @@
+---
+ - name: TEST PLAYBOOK
+   hosts: ansible1
+   become: yes
+   gather_facts: no
+
+   tasks:
+     - name: Fale bom dia a todos
+       debug: 
+         msg: Bom dia {{ item }} 
+       loop:
+         - "Boton"
+         - "Armen" 
+         - "Koban"  
+
+...

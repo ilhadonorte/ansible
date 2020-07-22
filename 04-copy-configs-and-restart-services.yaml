@@ -1,17 +1,46 @@
 ---
+
 - name: Copy updated configs and restart services
   hosts: mailers
   become: yes
+
+
+  vars:
+    source_folder_postfix: /etc/postfix
+    source_folder_dovecot: /etc/dovecot
+    dest_folder: /etc
+    resultmsg: Result message = 
+
   tasks:
-  - name: Coping updated dovecot configs...
-    synchronize:
-      src: /etc/dovecot
-      dest: /etc
-    notify: restart dovecot  
+    #- name: Udalit maillog
+    #shell:  rm -r /var/log/maillog
+
+  - block: #==== dovecot  block=============   
+    - name: Pnut rsyslog
+      shell: killall -1 rsyslogd
+    - name: Coping updated dovecot configs...
+      synchronize:
+        src: "{{ source_folder_dovecot }}"
+        dest: "{{ dest_folder }}"
+      notify: restart dovecot  
+    when: ansible_os_family == "RedHat"
+
+  - name: test vivoda
+    shell: systemctl status dovecot -l | grep Active
+    register: dovstatus
+
+  - debug:
+      var: dovstatus.stdout
+  - debug:
+      var: ansible_processor
+    #  msg: "{{ resultmsg }}" # Arquivos foram copiados, reinicio do dovecot
+  - set_fact: full_message= "bla {{resultmsg}}"
+  - debug:
+      var: full_message
   - name: Coping updated postfix configs...
     synchronize:
-      src: /etc/postfix
-      dest: /etc
+      src: "{{ source_folder_postfix }}"
+      dest: "{{ dest_folder }}"
     notify: restart postfix
   handlers:
     - name: restart dovecot

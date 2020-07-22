@@ -21,5 +21,9 @@
   - name: Disabling SELinux
     selinux:
       state: disabled
+  - name: add user sumarepochta
+    user:
+      name: "sumarepochta"
+      state: present
 ...
 
