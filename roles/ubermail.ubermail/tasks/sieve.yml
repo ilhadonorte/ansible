@@ -1,0 +1,50 @@
+---
+
+- name: "Ensure path to sieve script exists"
+  file:
+    path: "/decrypted/{{ item.domain }}/{{ item.account }}/sieve"
+    state: directory
+    owner: vmail
+    group: vmail
+    mode: 0700
+  with_items: "{{ mail_virtual_sieves }}"
+
+- include: sieve_loop.yml
+  with_items: "{{ mail_virtual_sieves }}"
+  loop_control:
+    loop_var: outer_item
+  when: mail_virtual_sieves | length > 0
+
+- name: "Ensure sieve file has what it takes"
+  blockinfile:
+    path: "/decrypted/{{ item.domain }}/{{ item.account }}/sieve/managesieve.sieve"
+    block: |2
+      {% for i in item.rule %}
+      # rule:[{{ i.name }}]
+      if {{ i.cond }} {
+        {{ i.acts | indent(2, false) }}
+      }
+      {% endfor %}
+  with_items: "{{ mail_virtual_sieves }}"
+
+- name: "Ensure ./sieve/managesieve.sieve -> ./dovecot.sieve symlink exist"
+  file:
+    src:  "/decrypted/{{ item.domain }}/{{ item.account }}/sieve/managesieve.sieve"
+    dest: "/decrypted/{{ item.domain }}/{{ item.account }}/.dovecot.sieve"
+    owner: vmail
+    group: vmail
+    state: link
+  with_items: "{{ mail_virtual_sieves }}"
+
+- name: "(Re)compile sieve scripts"
+  command: "/usr/bin/sievec .dovecot.sieve"
+  args:
+    chdir: "/decrypted/{{ item.domain }}/{{ item.account }}/"
+  with_items: "{{ mail_virtual_sieves }}"
+
+- name: "Ensure correct ownership of .dovecot.svbin files"
+  file:
+    path: "/decrypted/{{ item.domain }}/{{ item.account }}/.dovecot.sieve"
+    owner: vmail
+    group: vmail
+  with_items: "{{ mail_virtual_sieves }}"

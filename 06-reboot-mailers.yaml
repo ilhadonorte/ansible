@@ -1,0 +1,10 @@
+---
+- name: Reboot mailers
+  hosts: mailers
+  become: truth
+
+  tasks:
+    - name: Reboot mesmo
+      reboot:
+...
+

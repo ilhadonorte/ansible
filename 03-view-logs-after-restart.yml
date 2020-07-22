@@ -1,0 +1,11 @@
+---
+- name : View logs after restat
+  hosts: mailers
+  become: yes
+  tasks:
+    - name: View mailers logs
+      shell:
+        #chdir: /var/log
+        cmd: cat /var/log/maillog
+...
+

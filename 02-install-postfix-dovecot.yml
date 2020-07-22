@@ -1,0 +1,29 @@
+---
+- name : Install postfix and dovecot
+  hosts: all 
+  become: yes
+  tasks:
+  - name: 
+    yum: 
+      name: postfix
+      state: installed
+
+  - name: Enabling and starting postfix
+    service:
+      name: postfix
+      state: started
+      enabled: yes
+
+  - name: Instalando Dovecot
+    yum: 
+      name: dovecot
+      state: installed
+
+  - name: Enabling and starting dovecot
+    service:
+      name: dovecot
+      state: started
+      enabled: yes
+
+...
+

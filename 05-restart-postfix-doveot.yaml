@@ -1,0 +1,17 @@
+---
+- name : Clean logs and restart postfix and dovecot
+  hosts: mailers
+  become: yes
+
+  tasks:
+  - name: Restarting postfix service
+    service:
+      name: postfix
+      state: restarted
+  - name: Restarting dovecot service
+    service:
+      name: dovecot
+      state: restarted
+
+...
+

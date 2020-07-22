@@ -1,0 +1,23 @@
+---
+- name: Copy updated configs and restart services
+  hosts: mailers
+  become: yes
+  tasks:
+  - name: Coping updated dovecot configs...
+    synchronize:
+      src: /etc/dovecot
+      dest: /etc
+    notify: restart dovecot  
+  - name: Coping updated postfix configs...
+    synchronize:
+      src: /etc/postfix
+      dest: /etc
+    notify: restart postfix
+  handlers:
+    - name: restart dovecot
+      service: 
+        name: dovecot 
+        state: restarted
+    - name: restart postfix
+      service: name=postfix state=restarted
+...

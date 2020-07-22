@@ -1,0 +1,6 @@
+
+---
+
+ansible_connection: ssh 
+ansible_user: root 
+ansible_password: 11qq22ww

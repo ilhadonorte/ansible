@@ -1,0 +1,25 @@
+---
+- name : Install outros programs
+  hosts: all
+  become: yes 
+  tasks:
+  - name: Instalando auxilar aplicativos
+    #ping:
+    # yum: name=wget state=installed
+    yum:
+      name: "{{ item }}"
+      state: present
+    loop:
+      - wget
+      - telnet
+      - tree
+      - mc
+      - git-all
+      - psmisc
+      - rsyslog
+      - rsync
+  - name: Disabling SELinux
+    selinux:
+      state: disabled
+...
+

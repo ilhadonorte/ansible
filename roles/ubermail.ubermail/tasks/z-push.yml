@@ -1,0 +1,43 @@
+---
+- name: Add the apt key
+  apt_key:
+    url:  http://repo.z-hub.io/z-push:/final/Ubuntu_18.04/Release.key
+    state: present
+
+- name: Add the repo
+  apt_repository:
+    repo: deb http://repo.z-hub.io/z-push:/final/Ubuntu_18.04/ /
+
+
+- name: Install required packages for z-push
+  apt: pkg={{ ubermail_packages_zpush }} state=present
+  tags:
+    - dependencies
+
+- name: Ensure z-push state and log directories are in place
+  file: state=directory path={{ item }} owner=www-data group=www-data mode=0755
+  with_items:
+    - /decrypted/zpush-state
+    - /var/log/z-push
+  notify: restart apache
+
+- name: Ensure /etc/z-push files are configured right
+  copy: src=etc_z-push_{{ item }} dest=/etc/z-push/{{ item }}
+  with_items:
+    - caldav.conf.php
+    - carddav.conf.php
+    - combined.conf.php
+    - imap.conf.php
+
+- name: Copy z-push's config.php into place
+  template: src=etc_z-push_z-push.conf.php.j2 dest=/etc/z-push/z-push.conf.php
+
+- name: Create z-push apache alias and php configuration file
+  copy: src=etc_apache2_conf.d_z-push.conf dest=/etc/apache2/conf-available/z-push.conf
+
+- name: Enable z-push Apache alias and PHP configuration file
+  command: a2enconf z-push creates=/etc/apache2/conf-enabled/z-push.conf
+  notify: restart apache
+
+- name: Configure z-push logrotate
+  copy: src=etc_logrotate_z-push dest=/etc/logrotate.d/z-push.lr owner=root group=root mode=0644
