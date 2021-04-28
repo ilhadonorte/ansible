@@ -1,16 +1,74 @@
 ---
  - name: TEST PLAYBOOK
-   hosts: ansible1
+   any_errors_fatal: truth
+   hosts: "{{ qual_server }}"
+   #hosts: mailers to extra vars
    become: yes
    gather_facts: no
 
+   vars:
+     source_folder: /root/ansible
+     dest_folder: /root/govno/
+     template_folder: ~/ansible/files/nj2/
+     postfix_folder: /etc/postfix/
+
    tasks:
-     - name: Fale bom dia a todos
-       debug: 
-         msg: Bom dia {{ item }} 
-       loop:
-         - "Boton"
-         - "Armen" 
-         - "Koban"  
+     - name: Criar arquivos do outro arquivo
+       include: criar_arquivos.yaml mytext=ebisonokolom
+       delegate_to: mailer2
+
+     - debug:
+       #  var: ansible_facts
+         var: ansible_nodename  
+
+     - name: Generate different main.cf
+       template:
+         src: /root/ansible/files/nj2/postfix/main.cf.nj2
+         dest: /etc/postfix/main.cf
+        
+         #     - name: test errors
+         #yum: name=treeeee state=installed
+         #ignore_errors: yes
+
+     - name: Task2
+       shell: echo Hello World
+       register: myresult
+       failed_when: myresult.rc == 0
+       # failed_when: "'World' in myresult.stdout"
+     - debug:
+         var: myresult
+
+         #     - name: Fale bom dia a todos
+         #debug: 
+         #msg: Bom dia {{ item }} 
+         #loop:
+         # - "Boton"
+         #- "Armen" 
+         #- "Koban"  
+         #- name: Udalayu file esli est
+         #file: 
+         #name: myfile.txt
+         #state: absent
+         
+         #- name: Estudo repiticao
+         #shell: echo -n Z >> myfile.txt && cat myfile.txt
+         # register: emtotal
+       #delay: 2
+       #retries: 2
+       # until: emtotal.stdout.find("ZZ") == false
+
+       #  - name: Install many packages
+       #yum:
+       #  name: "{{ item }}"
+       #  state: installed
+       #with_items:
+       #  - mc
+       #  - telnet
+       #  - bind 
+       #
+       #  
+       #- name: Kopirovniye papki
+       #copy: src="{{ item }}" dest="{{ dest_folder}}"
+       #with_fileglob: "{{ source_folder }}/*.*"
 
 ...

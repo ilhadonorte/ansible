@@ -1,0 +1,937 @@
+    1  yum install epel-release
+    2  yum install ping
+    3  poweroff
+    4  ping ya.ru
+    5  logout
+    6  ip a
+    7  vi /etc/sysconfig/network-scripts/ifcfg-enp0s3 
+    8  cat /etc/resolv.conf 
+    9  vi /etc/sysconfig/network-scripts/ifcfg-enp0s3 
+   10  systemctk restart network
+   11  systemctl restart network
+   12  systemctl restart networking
+   13  ifdown enp0s3
+   14  ifup enp0s3
+   15  ping 8.8.8.8
+   16  ping ya.ru
+   17  ll /var/log/
+   18  yum install epel-release
+   19  yum install -y ansible
+   20  mkdir ansible
+   21  vi hosts.txt
+   22  ansible -i hosts.txt all -m ping
+   23  ssh 192.168.5.253 -l root
+   24  ansible -i hosts.txt all -m ping
+   25  ansible all -m shell -a "poweroff"
+   26  ansible all -m shell -a "poweroff" -b
+   27  poweroff
+   28  cd ansible/
+   29  ll
+   30  cd ..
+   31  ll
+   32  mv hosts.txt ./ansible/
+   33  ll
+   34  cd ansible/
+   35  ll
+   36  vim hosts.txt 
+   37  history 
+   38  ansible -i hosts.txt all -m ping
+   39  yum install vim
+   40  vim ~/.vimrc
+   41  vim hosts.txt 
+   42  ansible -i hosts.txt mailers -m ping
+   43  ssh 192.168.5.251 -l root
+   44  vim ansible.conf
+   45  ansible -i hosts.txt mailers -m ping
+   46  ansible  mailers -m ping
+   47  ansible mailers -m ping
+   48  vim hosts.txt 
+   49  ansible mailers -m ping
+   50  vim hosts.txt 
+   51  vim ansible.conf
+   52  ansible mailers -m ping
+   53  ansible all -m ping
+   54  vim hosts.txt 
+   55  ansible all -m ping
+   56  ansible -i hosts.txt all -m ping
+   57  ssh 192.168.5.252 -l root
+   58  ssh 192.168.5.251 -l root
+   59  ansible -i hosts.txt all -m ping
+   60  vim hosts.txt 
+   61  ansible -i hosts.txt all -m ping
+   62  vim hosts.txt 
+   63  ansible -i hosts.txt all -m ping
+   64  vim hosts.txt 
+   65  ansible -i hosts.txt all -m ping
+   66  ansible all -m setup
+   67  ansible ansible -m setup
+   68  ansible -i ansible -m setup
+   69  vim hosts.txt 
+   70  ansible -i hosts.txt all -m ping
+   71  scp root@192.168.5.251:/etc/dovecot/* /root   
+   72  scp root@192.168.5.251:/etc/dovecot/*.* /root   
+   73  scp root@192.168.5.251:/etc/dovecot /root   
+   74  man csp
+   75  man scp
+   76  scp -r root@192.168.5.251:/etc/dovecot /root   
+   77  ll ~
+   78  man scp
+   79  scp -r root@192.168.5.251:/etc/dovecot/ ~
+   80  echo \033[36m\033[8]D0755 0 dovecot | base64
+   81  echo \033[36m\033[8]D0755 | base64
+   82  echo "\033[36m\033[8]D0755" | base64
+   83  yum install dovecot
+   84  yum install postfix
+   85  dnf install dovecot
+   86  dnf install cockpit -y
+   87  systemctl start cockpit.socket
+   88  systemctl enable cockpit.socket
+   89  systemctl status cockpit.socket
+   90  ip a
+   91  ss -tunlp | grep cockpit
+   92  systemctl enable cockpit.socket
+   93  vim hosts.txt 
+   94  ansible -i hosts.txt all -m ping
+   95  ssh 192.168.5.251 -l root
+   96  ansible -i hosts.txt all -m ping
+   97  ssh 192.168.5.251 -l root
+   98  cd ..
+   99  ll -a
+  100  cd .ssh/
+  101  ll
+  102  cat known_hosts 
+  103  vim known_hosts 
+  104  ansible -i hosts.txt all -m ping
+  105  cd ..
+  106  cd ansible/
+  107  ansible -i hosts.txt all -m ping
+  108  ssh 192.168.5.251 -l root
+  109  ansible -i hosts.txt all -m ping
+  110  ansible all -m shell -a "poweroff" -b
+  111  ansible -i hosts.txt -m shell -a "poweroff" -b
+  112  ansible -i hosts.txt all -m shell -a "poweroff" -b
+  113  yum install mc
+  114  mc
+  115  w
+  116  logout
+  117  OA
+  118  ll
+  119  cd ans
+  120  cd ansible/
+  121  ll
+  122  vim install-mailer.yml
+  123  mv install-mailer.yml 01-prelims-actions.yml
+  124  ll
+  125  vim hosts.txt 
+  126  ansible-playbook 01-prelims-actions.yml 
+  127  vim 01-prelims-actions.yml 
+  128  ansible-playbook 01-prelims-actions.yml 
+  129  vim 01-prelims-actions.yml 
+  130  ansible-playbook 01-prelims-actions.yml 
+  131  vim 01-prelims-actions.yml 
+  132  ansible-playbook 01-prelims-actions.yml 
+  133  vim 01-prelims-actions.yml 
+  134  ansible-playbook 01-prelims-actions.yml 
+  135  vim 01-prelims-actions.yml 
+  136  ansible-playbook 01-prelims-actions.yml 
+  137  vim 01-prelims-actions.yml 
+  138  ansible-playbook 01-prelims-actions.yml 
+  139  vim 01-prelims-actions.yml 
+  140  ansible-playbook 01-prelims-actions.yml 
+  141  cd ..
+  142  ll
+  143  dnf install -y git-all
+  144  git pull https://github.com/ansible/ansible-examples.git
+  145  git clone https://github.com/ansible/ansible-examples.git
+  146  echo export EDITOR=vim >>~/.bashrc
+  147  cd ansible
+  148  vim 01-prelims-actions.yml 
+  149  ansible-playbook 01-prelims-actions.yml 
+  150  vim 01-prelims-actions.yml 
+  151  ansible-playbook 01-prelims-actions.yml 
+  152  vim 01-prelims-actions.yml 
+  153  ansible-playbook 01-prelims-actions.yml 
+  154  vim 01-prelims-actions.yml 
+  155  ansible-playbook 01-prelims-actions.yml 
+  156  vim 01-prelims-actions.yml 
+  157  ansible-playbook 01-prelims-actions.yml 
+  158  vim 01-prelims-actions.yml 
+  159  ansible-playbook 01-prelims-actions.yml 
+  160  vim 01-prelims-actions.yml 
+  161  ansible-playbook 01-prelims-actions.yml 
+  162  vim 01-prelims-actions.yml 
+  163  ansible-playbook 01-prelims-actions.yml 
+  164  vim hosts.txt 
+  165  vim 01-prelims-actions.yml 
+  166  ansible-playbook 01-prelims-actions.yml 
+  167  ansible-playbook -i hosts.txt 01-prelims-actions.yml 
+  168  vim 01-prelims-actions.yml 
+  169  ansible-playbook -i hosts.txt 01-prelims-actions.yml 
+  170  vim 01-prelims-actions.yml 
+  171  ansible-playbook -i hosts.txt 01-prelims-actions.yml 
+  172  vim 01-prelims-actions.yml 
+  173  ansible-playbook -i hosts.txt 01-prelims-actions.yml 
+  174  vim 01-prelims-actions.yml 
+  175  ansible-playbook -i hosts.txt 01-prelims-actions.yml 
+  176  vim 01-prelims-actions.yml 
+  177  ansible-playbook -i hosts.txt 01-prelims-actions.yml 
+  178  vim 01-prelims-actions.yml 
+  179  ansible-playbook -i hosts.txt 01-prelims-actions.yml 
+  180  vim 01-prelims-actions.yml 
+  181  ansible-playbook -i hosts.txt 01-prelims-actions.yml 
+  182  vim 01-prelims-actions.yml 
+  183  ansible-playbook -i hosts.txt 01-prelims-actions.yml 
+  184  ll
+  185  vim ansible.conf 
+  186  vim hosts.txt 
+  187  ansible-playbook 01-prelims-actions.yml 
+  188  ansible-playbook mailers 01-prelims-actions.yml 
+  189  ansible-playbook -i mailers 01-prelims-actions.yml 
+  190  ansible-playbook -i hosts  01-prelims-actions.yml 
+  191  ansible-playbook -i hosts.txt 01-prelims-actions.yml 
+  192  ansible-playbook -i hosts.txt mailers 01-prelims-actions.yml 
+  193  vim hosts.txt 
+  194  ll
+  195  mv ansible.conf ansible.cfg 
+  196  vim ansible.cfg 
+  197  ansible --version 
+  198  vim ansible.cfg 
+  199  ansible-playbook  mailers 01-prelims-actions.yml 
+  200  ansible-playbook  01-prelims-actions.yml 
+  201  vim hosts.txt 
+  202  ansible-playbook 01-prelims-actions.yml 
+  203  vim hosts.txt 
+  204  ansible-playbook 01-prelims-actions.yml 
+  205  vim hosts.txt 
+  206  ansible-playbook 01-prelims-actions.yml 
+  207  vim ansible.cfg 
+  208  vim hosts.txt 
+  209  ansible-playbook 01-prelims-actions.yml 
+  210  vim hosts.txt 
+  211  ansible-playbook 01-prelims-actions.yml 
+  212  vim hosts.txt 
+  213  ansible-playbook 01-prelims-actions.yml 
+  214  ssh 192.168.5.253 -l root
+  215  w
+  216  vim hosts.txt 
+  217  ansible-playbook 01-prelims-actions.yml 
+  218  reboot
+  219  cd an
+  220  cd ansible
+  221  ll
+  222  vim hosts.txt 
+  223  ansible-playbook 01-prelims-actions.yml 
+  224  cd ansible
+  225  ansible-playbook 01-prelims-actions.yml 
+  226  ansible-playbook -i all 01-prelims-actions.yml 
+  227  ansible-playbook all 01-prelims-actions.yml 
+  228  vim ansible.cfg 
+  229  ansible-playbook all 01-prelims-actions.yml 
+  230  ansible-playbook  01-prelims-actions.yml 
+  231  ansible-playbook -i hosts.txt 01-prelims-actions.yml 
+  232  sync
+  233  ansible-playbook -i hosts.txt 01-prelims-actions.yml 
+  234  vim hosts.txt 
+  235  ansible-playbook -i hosts.txt 01-prelims-actions.yml 
+  236  ansible-inventory --list
+  237  vim hosts.txt 
+  238  ansible-inventory --list
+  239  ansible-playbook -i hosts.txt 01-prelims-actions.yml 
+  240  vim hosts.txt 
+  241  ansible-playbook -i hosts.txt 01-prelims-actions.yml 
+  242  vim 01-prelims-actions.yml 
+  243  vim hosts.txt 
+  244  vim ansible.cfg 
+  245  ansible-playbook 01-prelims-actions.yml 
+  246  ansible-inventory --list
+  247  ansible-inventory --graph
+  248  ansible all -m setup
+  249  ansible mailer1 -m setup
+  250  vim hosts.txt 
+  251  ansible-inventory --graph
+  252  ansible-inventory --list
+  253  ansible-playbook 01-prelims-actions.yml 
+  254  vim ansible.cfg 
+  255  ssh 192.168.5.252 -l root
+  256  vim 01-prelims-actions.yml 
+  257  cp 01-prelims-actions.yml 02-install-postfix-dovecot.yml
+  258  vim 02-install-postfix-dovecot.yml
+  259  ansible-playbook 02-install-postfix-dovecot.yml 
+  260  vim 02-install-postfix-dovecot.yml
+  261  ansible-playbook 02-install-postfix-dovecot.yml 
+  262  vim 02-install-postfix-dovecot.yml
+  263  ansible-playbook 02-install-postfix-dovecot.yml 
+  264  vim 02-install-postfix-dovecot.yml
+  265  ansible-playbook 02-install-postfix-dovecot.yml 
+  266  vim 02-install-postfix-dovecot.yml
+  267  ansible-playbook 02-install-postfix-dovecot.yml 
+  268  vim 02-install-postfix-dovecot.yml
+  269  ansible mailers -m shell -a "ls /etc/yum.repo.d"
+  270  ansible mailers -m shell -a "ls /etc/yum.repos.d"
+  271  ansible mailers -m shell -a "ls -l /etc/yum.repos.d"
+  272  vim 02-install-postfix-dovecot.yml
+  273  ansible-playbook 02-install-postfix-dovecot.yml 
+  274  vim 02-install-postfix-dovecot.yml
+  275  ansible-playbook 02-install-postfix-dovecot.yml 
+  276  vim 02-install-postfix-dovecot.yml
+  277  ansible-playbook 02-install-postfix-dovecot.yml 
+  278  vim 02-install-postfix-dovecot.yml
+  279  ansible-playbook 02-install-postfix-dovecot.yml 
+  280  vim 02-install-postfix-dovecot.yml
+  281  ansible-playbook 02-install-postfix-dovecot.yml 
+  282  vim 02-install-postfix-dovecot.yml
+  283  ansible-playbook 02-install-postfix-dovecot.yml 
+  284  vim 02-install-postfix-dovecot.yml
+  285  ansible-playbook 02-install-postfix-dovecot.yml 
+  286  vim 02-install-postfix-dovecot.yml
+  287  ansible-playbook 02-install-postfix-dovecot.yml 
+  288  vim 02-install-postfix-dovecot.yml
+  289  ansible-playbook 02-install-postfix-dovecot.yml 
+  290  vim 02-install-postfix-dovecot.yml
+  291  ansible-playbook 02-install-postfix-dovecot.yml 
+  292  vim 02-install-postfix-dovecot.yml
+  293  ansible-playbook 02-install-postfix-dovecot.yml 
+  294  vim 02-install-postfix-dovecot.yml
+  295  ansible-playbook 02-install-postfix-dovecot.yml 
+  296  vim 02-install-postfix-dovecot.yml
+  297  ansible-playbook 02-install-postfix-dovecot.yml 
+  298  vim 02-install-postfix-dovecot.yml
+  299  ansible-playbook 02-install-postfix-dovecot.yml 
+  300  vim 02-install-postfix-dovecot.yml
+  301  ansible-playbook 02-install-postfix-dovecot.yml 
+  302  vim 02-install-postfix-dovecot.yml
+  303  ansible-playbook 02-install-postfix-dovecot.yml 
+  304  vim 02-install-postfix-dovecot.yml
+  305  ansible-playbook 02-install-postfix-dovecot.yml 
+  306  ansible all -m shell -a "poweroff"
+  307  ansible-playbook 02-install-postfix-dovecot.yml 
+  308  vim 02-install-postfix-dovecot.yml
+  309  ansible-playbook 02-install-postfix-dovecot.yml 
+  310  vim 02-install-postfix-dovecot.yml
+  311  cp 02-install-postfix-dovecot.yml 03-.yml
+  312  vim 03-.yml
+  313  ansible-playbook 03-.yml 
+  314  vim 03-.yml
+  315  ansible-playbook 03-.yml 
+  316  vim 03-.yml
+  317  ansible-playbook 03-.yml 
+  318  ansible all -m shell -a "poweroff"
+  319  cd ansible
+  320  ll
+  321  cp 02-install-postfix-dovecot.yml 05-restart-postfix-doveot.yaml
+  322  systemctl enable dovecot
+  323  systemctl start postfix
+  324  vim 05-restart-postfix-doveot.yaml
+  325  ansible-playbook 05-restart-postfix-doveot.yaml 
+  326  vim 05-restart-postfix-doveot.yaml
+  327  ansible-playbook 05-restart-postfix-doveot.yaml 
+  328  vim 05-restart-postfix-doveot.yaml
+  329  ansible-playbook 05-restart-postfix-doveot.yaml 
+  330  vim 05-restart-postfix-doveot.yaml
+  331  ansible-playbook 05-restart-postfix-doveot.yaml 
+  332  vim 05-restart-postfix-doveot.yaml
+  333  ansible-playbook 05-restart-postfix-doveot.yaml 
+  334  vim 05-restart-postfix-doveot.yaml
+  335  ansible-playbook 05-restart-postfix-doveot.yaml 
+  336  vim 05-restart-postfix-doveot.yaml
+  337  ansible-playbook 05-restart-postfix-doveot.yaml 
+  338  vim 05-restart-postfix-doveot.yaml
+  339  ansible-playbook 05-restart-postfix-doveot.yaml 
+  340  vim 05-restart-postfix-doveot.yaml
+  341  ansible-playbook 05-restart-postfix-doveot.yaml 
+  342  ll
+  343  vim 02-install-postfix-dovecot.yml 
+  344  ansible-playbook 02-install-postfix-dovecot.yml 
+  345  vim 02-install-postfix-dovecot.yml 
+  346  ansible-playbook 02-install-postfix-dovecot.yml 
+  347  vim 01-prelims-actions.yml 
+  348  ansible-playbook 01-prelims-actions.yml 
+  349  vim 01-prelims-actions.yml 
+  350  ansible-playbook 01-prelims-actions.yml 
+  351  vim ansible.cfg 
+  352  ansible-galaxy install stackfocus.postfix-dovecot
+  353  ansible-galaxy install ansible-galaxy install ubermail.ubermail
+  354  ansible-galaxy install ubermail.ubermail
+  355  ansible all -m shell -a "poweroff"
+  356  vi 05-restart-postfix-doveot.yaml 
+  357  dnf install yamllint
+  358  cd ansible
+  359  yamllint .
+  360  yamllint 05-restart-postfix-doveot.yaml 
+  361  pip install git+https://github.com/ansible/ansible-lint.git
+  362  ansible-playbook 01-prelims-actions.yml --syntax-check
+  363  du -sh /root
+  364  ansible all -m shell -a "poweroff"
+  365  du -sh /root
+  366  cd ansible
+  367  vi 05-restart-postfix-doveot.yaml 
+  368  cd ansible
+  369  ll
+  370  mkdir group_vars
+  371  cd group_vars/
+  372  cd ..
+  373  cat hosts.txt 
+  374  vim ./group_vars/mailers
+  375  vim hosts.txt 
+  376  ansible-playbook 01-prelims-actions.yml --syntax-check
+  377  ansible-playbook 01-prelims-actions.yml
+  378  vim hosts.txt 
+  379  infocmp -1L xterm | grep max_colors
+  380  vim hosts.txt 
+  381  ansible-playbook 01-prelims-actions.yml
+  382  ansible-inventory --list
+  383  vim ./group_vars/ungrouped
+  384  vim hosts.txt 
+  385  ansible-inventory --list
+  386  vim ./group_vars/ungrouped
+  387  ansible-inventory --list
+  388  tree
+  389  ip a
+  390  vim ./group_vars/ungrouped
+  391  ansible-inventory --list
+  392  ansible all -m shell -a "systemctl status -l postfix"
+  393  ansible mailers -m shell -a "systemctl status -l postfix"
+  394  ansible mailers -m shell -a "systemctl status -l dovecot"
+  395  ll
+  396  vim 01-prelims-actions.yml 
+  397  ansible-playbook 01-prelims-actions.yml 
+  398  vim ./group_vars/ungrouped
+  399  ansible-playbook 01-prelims-actions.yml 
+  400  ll
+  401  vim 02-install-postfix-dovecot.yml 
+  402  ansible-playbook 02-install-postfix-dovecot.yml 
+  403  mv 03-.yml 03-view-logs-after-restart.yml 
+  404  ansible-playbook 03-view-logs-after-restart.yml 
+  405  vim 01-prelims-actions.yml 
+  406  ansible-playbook 01
+  407  ansible-playbook 01-prelims-actions.yml 
+  408  ansible-playbook 05-restart-postfix-doveot.yaml 
+  409  ansible-playbook 03-view-logs-after-restart.yml 
+  410  vim 03
+  411  vim 03-view-logs-after-restart.yml 
+  412  ansible-playbook 03-view-logs-after-restart.yml 
+  413  vim 03-view-logs-after-restart.yml 
+  414  ansible-playbook 03-view-logs-after-restart.yml 
+  415  ansible-playbook 01-prelims-actions.yml 
+  416  ll
+  417  vim 04-copy-configs-and-restart.yaml
+  418  ansible-playbook 05-restart-postfix-doveot.yaml 
+  419  cd /etc/postfix/
+  420  git init
+  421  git config --global user.name "ilhadonorte"
+  422  git config --global user.email ilhadonorte@gmail.com
+  423  git remote add postfix https://github.com/ilhadonorte/postfix.git
+  424  ll
+  425  git pull https://github.com/ilhadonorte/postfix.git
+  426  ll
+  427  cd /etc/dovecot/
+  428  ll
+  429  git init
+  430  git remote add dovecot https://github.com/ilhadonorte/dovecot.git
+  431  git pull https://github.com/ilhadonorte/dovecot.git
+  432  ll
+  433  cd ~/ansible
+  434  vim 04-copy-configs-and-restart.yaml
+  435  ansible-playbook 04-copy-configs-and-restart.yaml
+  436  vim 04-copy-configs-and-restart.yaml
+  437  ansible-playbook 04-copy-configs-and-restart.yaml
+  438  vim 04-copy-configs-and-restart.yaml
+  439  ansible-playbook 04-copy-configs-and-restart.yaml
+  440  vim 04-copy-configs-and-restart.yaml
+  441  ansible-playbook 04-copy-configs-and-restart.yaml
+  442  vim 04-copy-configs-and-restart.yaml
+  443  ansible-playbook 04-copy-configs-and-restart.yaml
+  444  yamllint 04-copy-configs-and-restart.yaml
+  445  vim 04-copy-configs-and-restart.yaml
+  446  yamllint 04-copy-configs-and-restart.yaml
+  447  vim 04-copy-configs-and-restart.yaml
+  448  yamllint 04-copy-configs-and-restart.yaml
+  449  vim 04-copy-configs-and-restart.yaml
+  450  yamllint 04-copy-configs-and-restart.yaml
+  451  vim 04-copy-configs-and-restart.yaml
+  452  yamllint 04-copy-configs-and-restart.yaml
+  453  vim 04-copy-configs-and-restart.yaml
+  454  yamllint 04-copy-configs-and-restart.yaml
+  455  ansible-playbook 04-copy-configs-and-restart.yaml
+  456  ansible-playbook 04-copy-configs-and-restart.yaml --check-syntaxe
+  457  ansible-playbook 04-copy-configs-and-restart.yaml --syntax-check
+  458  vim 04-copy-configs-and-restart.yaml
+  459  ansible-playbook 04-copy-configs-and-restart.yaml --syntax-check
+  460  vim 04-copy-configs-and-restart.yaml
+  461  ansible-playbook 04-copy-configs-and-restart.yaml --syntax-check
+  462  vim 04-copy-configs-and-restart.yaml
+  463  ansible-playbook 04-copy-configs-and-restart.yaml --syntax-check
+  464  vim 04-copy-configs-and-restart.yaml
+  465  ansible-playbook 04-copy-configs-and-restart.yaml --syntax-check
+  466  vim 04-copy-configs-and-restart.yaml
+  467  ansible-playbook 04-copy-configs-and-restart.yaml --syntax-check
+  468  vim 04-copy-configs-and-restart.yaml
+  469  ansible-playbook 04-copy-configs-and-restart.yaml --syntax-check
+  470  ansible-playbook 04-copy-configs-and-restart.yaml
+  471  vim 04-copy-configs-and-restart.yaml
+  472  ansible-playbook 04-copy-configs-and-restart.yaml
+  473  ansible all -m shell -a "poweroff"
+  474  * 
+  475  date
+  476  cd ansible
+  477  ll
+  478  vim 06-reboot-mailers.yaml
+  479  ansible-playbook 06-reboot-mailers.yaml 
+  480  ll
+  481  vim 04-copy-configs-and-restart.yaml 
+  482  mv 04-copy-configs-and-restart.yaml 04-copy-configs-and-restart-services.yaml 
+  483  ansible-playbook 04-copy-configs-and-restart-services.yaml 
+  484  vim 04-copy-configs-and-restart-services.yaml 
+  485  ansible-playbook 04-copy-configs-and-restart-services.yaml 
+  486  vim 04-copy-configs-and-restart-services.yaml 
+  487  ansible-playbook 04-copy-configs-and-restart-services.yaml 
+  488  vim 01-prelims-actions.yml 
+  489  ansible-playbook 01-prelims-actions.yml 
+  490  ansible-playbook 04-copy-configs-and-restart-services.yaml 
+  491  vim 04-copy-configs-and-restart-services.yaml 
+  492  ansible-playbook 04-copy-configs-and-restart-services.yaml 
+  493  vim 04-copy-configs-and-restart-services.yaml 
+  494  ansible-playbook 04-copy-configs-and-restart-services.yaml 
+  495  vim 04-copy-configs-and-restart-services.yaml 
+  496  ansible-playbook 04-copy-configs-and-restart-services.yaml --syntax-check
+  497  yamllint 04-copy-configs-and-restart-services.yaml
+  498  vim 04-copy-configs-and-restart-services.yaml 
+  499  yamllint 04-copy-configs-and-restart-services.yaml
+  500  vim 04-copy-configs-and-restart-services.yaml 
+  501  yamllint 04-copy-configs-and-restart-services.yaml
+  502  ansible-playbook 04-copy-configs-and-restart-services.yaml --syntax-check
+  503  vim 04-copy-configs-and-restart-services.yaml 
+  504  ansible-playbook 04-copy-configs-and-restart-services.yaml --syntax-check
+  505  vim 04-copy-configs-and-restart-services.yaml 
+  506  ansible-playbook 04-copy-configs-and-restart-services.yaml --syntax-check
+  507  yamllint 04-copy-configs-and-restart-services.yaml
+  508  ansible-playbook 04-copy-configs-and-restart-services.yaml
+  509  ansible all -m shell -a "poweroff"
+  510  vim ~/.vimrc
+  511  cd ansible
+  512  vim 04-copy-configs-and-restart-services.yaml 
+  513  vim ~/.vimrc
+  514  vim 04-copy-configs-and-restart-services.yaml
+  515  vim ~/.vimrc
+  516  vim 04-copy-configs-and-restart-services.yaml
+  517  yamllint 04-copy-configs-and-restart-services.yaml
+  518  vim 04-copy-configs-and-restart-services.yaml
+  519  yamllint 04-copy-configs-and-restart-services.yaml
+  520  vim 04-copy-configs-and-restart-services.yaml
+  521  ansible-playbook 04-copy-configs-and-restart-services.yaml --syntax-check
+  522  vim 04-copy-configs-and-restart-services.yaml
+  523  ansible-playbook 04-copy-configs-and-restart-services.yaml --syntax-check
+  524  vim 04-copy-configs-and-restart-services.yaml
+  525  ansible-playbook 04-copy-configs-and-restart-services.yaml --syntax-check
+  526  vim 04-copy-configs-and-restart-services.yaml
+  527  ansible-playbook 04-copy-configs-and-restart-services.yaml --syntax-check
+  528  vim 04-copy-configs-and-restart-services.yaml
+  529  ansible-playbook 04-copy-configs-and-restart-services.yaml --syntax-check
+  530  vim 04-copy-configs-and-restart-services.yaml
+  531  ansible-playbook 04-copy-configs-and-restart-services.yaml --syntax-check
+  532  vim 04-copy-configs-and-restart-services.yaml
+  533  ansible-playbook 04-copy-configs-and-restart-services.yaml --syntax-check
+  534  vim 04-copy-configs-and-restart-services.yaml
+  535  ansible-playbook 04-copy-configs-and-restart-services.yaml --syntax-check
+  536  vim 04-copy-configs-and-restart-services.yaml
+  537  ansible-playbook 04-copy-configs-and-restart-services.yaml
+  538  vim 04-copy-configs-and-restart-services.yaml
+  539  ansible-playbook 04-copy-configs-and-restart-services.yaml --syntax-check
+  540  ansible-playbook 04-copy-configs-and-restart-services.yaml
+  541  vim 04-copy-configs-and-restart-services.yaml
+  542  ansible-playbook 02-install-postfix-dovecot.yml
+  543  ansible all -m shell -a "poweroff"
+  544  cd ansible
+  545  ll
+  546  vim 02-install-postfix-dovecot.yml 
+  547  anlsible-playbook 02-install-postfix-dovecot.yml 
+  548  ansible-playbook 02-install-postfix-dovecot.yml 
+  549  vim 02-install-postfix-dovecot.yml 
+  550  ansible-playbook 02-install-postfix-dovecot.yml 
+  551  vim 02-install-postfix-dovecot.yml 
+  552  ansible-playbook 02-install-postfix-dovecot.yml 
+  553  ll
+  554  ansible-playbook 04-copy-configs-and-restart-services.yaml 
+  555  vim 04-copy-configs-and-restart-services.yaml 
+  556  ansible-playbook 04-copy-configs-and-restart-services.yaml 
+  557  vim 04-copy-configs-and-restart-services.yaml 
+  558  ansible-playbook 04-copy-configs-and-restart-services.yaml 
+  559  vim 04-copy-configs-and-restart-services.yaml 
+  560  ansible-playbook 04-copy-configs-and-restart-services.yaml 
+  561  vim 04-copy-configs-and-restart-services.yaml 
+  562  ansible-playbook 04-copy-configs-and-restart-services.yaml 
+  563  vim 04-copy-configs-and-restart-services.yaml 
+  564  ansible-playbook 04-copy-configs-and-restart-services.yaml 
+  565  vim 04-copy-configs-and-restart-services.yaml 
+  566  ansible-playbook 05-restart-postfix-doveot.yaml 
+  567  du -sh /root/ansible
+  568  du -sh /root/ansible/roles
+  569  git init
+  570  git remote add ansible  https://github.com/ilhadonorte/ansible.git
+  571  git pull  https://github.com/ilhadonorte/ansible.git
+  572  ll
+  573  git add -A
+  574  git commit -m "001 - vse dlya testa replik"
+  575  git push ansible master
+  576  llansible-playbook 04-copy-configs-and-restart-services.yaml
+  577  ansible-playbook 04-copy-configs-and-restart-services.yaml
+  578  vim 04-copy-configs-and-restart-services.yaml
+  579  ansible-playbook 04-copy-configs-and-restart-services.yaml
+  580  vim 04-copy-configs-and-restart-services.yaml
+  581  ansible-playbook 04-copy-configs-and-restart-services.yaml
+  582  ll
+  583  ansible-doc -l
+  584  vim ~/.vimrc
+  585  vim 04-copy-configs-and-restart-services.yaml
+  586  vim ~/.vimrc
+  587  vim 04-copy-configs-and-restart-services.yaml
+  588  ansible-playbook 04-copy-configs-and-restart-services.yaml
+  589  vim 04-copy-configs-and-restart-services.yaml
+  590  ansible-playbook 04-copy-configs-and-restart-services.yaml
+  591  vim 04-copy-configs-and-restart-services.yaml
+  592  ansible-playbook 04-copy-configs-and-restart-services.yaml
+  593  vim 04-copy-configs-and-restart-services.yaml
+  594  ansible-playbook 04-copy-configs-and-restart-services.yaml
+  595  vim 04-copy-configs-and-restart-services.yaml
+  596  ansible-playbook 04-copy-configs-and-restart-services.yaml
+  597  vim 04-copy-configs-and-restart-services.yaml
+  598  ansible-playbook 04-copy-configs-and-restart-services.yaml
+  599  vim 04-copy-configs-and-restart-services.yaml
+  600  ansible-playbook 04-copy-configs-and-restart-services.yaml
+  601  vim 04-copy-configs-and-restart-services.yaml
+  602  ansible-playbook 04-copy-configs-and-restart-services.yaml
+  603  vim 04-copy-configs-and-restart-services.yaml
+  604  ansible-playbook 04-copy-configs-and-restart-services.yaml
+  605  vim 04-copy-configs-and-restart-services.yaml
+  606  ansible-playbook 04-copy-configs-and-restart-services.yaml
+  607  vim 04-copy-configs-and-restart-services.yaml
+  608  ansible-playbook 04-copy-configs-and-restart-services.yaml
+  609  vim 04-copy-configs-and-restart-services.yaml
+  610  ansible-playbook 04-copy-configs-and-restart-services.yaml
+  611  vim 04-copy-configs-and-restart-services.yaml
+  612  ansible-playbook 04-copy-configs-and-restart-services.yaml
+  613  vim 04-copy-configs-and-restart-services.yaml
+  614  ansible-playbook 04-copy-configs-and-restart-services.yaml
+  615  vim 04-copy-configs-and-restart-services.yaml
+  616  ansible-playbook 04-copy-configs-and-restart-services.yaml
+  617  vim 04-copy-configs-and-restart-services.yaml
+  618  ansible-playbook 04-copy-configs-and-restart-services.yaml
+  619  vim 04-copy-configs-and-restart-services.yaml
+  620  ansible-playbook 04-copy-configs-and-restart-services.yaml
+  621  vim 04-copy-configs-and-restart-services.yaml
+  622  ansible-playbook 04-copy-configs-and-restart-services.yaml
+  623  vim 04-copy-configs-and-restart-services.yaml
+  624  ansible-playbook 04-copy-configs-and-restart-services.yaml
+  625  vim 04-copy-configs-and-restart-services.yaml
+  626  ansible-playbook 04-copy-configs-and-restart-services.yaml
+  627  vim 04-copy-configs-and-restart-services.yaml
+  628  ansible-playbook 04-copy-configs-and-restart-services.yaml
+  629  vim 04-copy-configs-and-restart-services.yaml
+  630  ansible-playbook 04-copy-configs-and-restart-services.yaml
+  631  vim 04-copy-configs-and-restart-services.yaml
+  632  ansible-playbook 04-copy-configs-and-restart-services.yaml
+  633  vim 04-copy-configs-and-restart-services.yaml
+  634  ansible-playbook 04-copy-configs-and-restart-services.yaml
+  635  vim 04-copy-configs-and-restart-services.yaml
+  636  ansible-playbook 04-copy-configs-and-restart-services.yaml
+  637  vim 04-copy-configs-and-restart-services.yaml
+  638  ansible-playbook 04-copy-configs-and-restart-services.yaml
+  639  vim 04-copy-configs-and-restart-services.yaml
+  640  ansible-playbook 04-copy-configs-and-restart-services.yaml
+  641  vim 04-copy-configs-and-restart-services.yaml
+  642  ansible-playbook 04-copy-configs-and-restart-services.yaml
+  643  ansible all -m setup -a "filter=ansible_processor"
+  644  vim 04-copy-configs-and-restart-services.yaml
+  645  ansible all -m setup -a "filter=ansible_processor"
+  646  ansible-playbook 04-copy-configs-and-restart-services.yaml
+  647  vim 04-copy-configs-and-restart-services.yaml
+  648  ansible-playbook 04-copy-configs-and-restart-services.yaml
+  649  vim 04-copy-configs-and-restart-services.yaml
+  650  ansible-playbook 04-copy-configs-and-restart-services.yaml
+  651  vim 04-copy-configs-and-restart-services.yaml
+  652  ansible-playbook 04-copy-configs-and-restart-services.yaml
+  653  vim 04-copy-configs-and-restart-services.yaml
+  654  ansible-playbook 04-copy-configs-and-restart-services.yaml
+  655  vim 04-copy-configs-and-restart-services.yaml
+  656  ansible-playbook 04-copy-configs-and-restart-services.yaml
+  657  vim 04-copy-configs-and-restart-services.yaml
+  658  ansible-playbook 04-copy-configs-and-restart-services.yaml
+  659  vim 04-copy-configs-and-restart-services.yaml
+  660  ansible-playbook 04-copy-configs-and-restart-services.yaml
+  661  vim 04-copy-configs-and-restart-services.yaml
+  662  ansible-playbook 04-copy-configs-and-restart-services.yaml
+  663  vim 04-copy-configs-and-restart-services.yaml
+  664  ansible-playbook 04-copy-configs-and-restart-services.yaml
+  665  vim 04-copy-configs-and-restart-services.yaml
+  666  ansible-playbook 04-copy-configs-and-restart-services.yaml
+  667  vim 04-copy-configs-and-restart-services.yaml
+  668  ansible-playbook 04-copy-configs-and-restart-services.yaml
+  669  vim 04-copy-configs-and-restart-services.yaml
+  670  ansible-playbook 04-copy-configs-and-restart-services.yaml
+  671  vim 04-copy-configs-and-restart-services.yaml
+  672  ansible-playbook 04-copy-configs-and-restart-services.yaml
+  673  vim 04-copy-configs-and-restart-services.yaml
+  674  ansible-playbook 04-copy-configs-and-restart-services.yaml
+  675  vim 04-copy-configs-and-restart-services.yaml
+  676  ansible-playbook 04-copy-configs-and-restart-services.yaml
+  677  vim 99-big-test-playbook.yaml
+  678  ansible-playbook 99-big-test-playbook.yaml 
+  679  ansible-inventory 
+  680  ansible-inventory --list
+  681  vim 99-big-test-playbook.yaml
+  682  ansible-inventory --list
+  683  ansible-playbook 99-big-test-playbook.yaml 
+  684  vim 99-big-test-playbook.yaml
+  685  ansible-playbook 99-big-test-playbook.yaml 
+  686  vim 99-big-test-playbook.yaml
+  687  ansible-playbook 99-big-test-playbook.yaml 
+  688  vim 01-prelims-actions.yml 
+  689  vim 99-big-test-playbook.yaml
+  690  ansible-playbook 99-big-test-playbook.yaml 
+  691  vim 99-big-test-playbook.yaml
+  692  ansible-playbook 99-big-test-playbook.yaml 
+  693  vim 99-big-test-playbook.yaml
+  694  ansible-playbook 99-big-test-playbook.yaml 
+  695  vim 99-big-test-playbook.yaml
+  696  ansible-playbook 99-big-test-playbook.yaml 
+  697  vim 99-big-test-playbook.yaml
+  698  ansible mailer1 -m setup
+  699  ansible mailers -m setup
+  700  ansible all -m setup
+  701  cd ~/ansible
+  702  ansible mailer1 -m setup
+  703  cat gf.repo 
+  704  cd ~/ansible
+  705  git push ansible master
+  706  git add -A
+  707  git commit -m "002 vse dlya testa replik"
+  708  git push ansible master
+  709  git status
+  710  ansible all -m shell -a "poweroff"
+  711  dovecot --version
+  712  postconf -d | grep mail_version
+  713  cat README.md 
+  714  dnf install ssmtp
+  715  dnf search ssmtp
+  716  dnf provides ssmtp
+  717  cd ansible
+  718  vim 99-big-test-playbook.yaml 
+  719  vim 99-big-test-playbook.yaml
+  720  ansible-playbook 99-big-test-playbook.yaml 
+  721  vim 99-big-test-playbook.yaml
+  722  ansible-playbook 99-big-test-playbook.yaml 
+  723  vim 99-big-test-playbook.yaml
+  724  ansible-playbook 99-big-test-playbook.yaml 
+  725  vim 99-big-test-playbook.yaml
+  726  ansible-playbook 99-big-test-playbook.yaml -v
+  727  vim 99-big-test-playbook.yaml
+  728  ansible-playbook 99-big-test-playbook.yaml -vv
+  729  vim 99-big-test-playbook.yaml
+  730  ansible-playbook 99-big-test-playbook.yaml -vvv
+  731  vim 99-big-test-playbook.yaml
+  732  ansible-playbook 99-big-test-playbook.yaml -vvv
+  733  vim 99-big-test-playbook.yaml
+  734  ansible-playbook 99-big-test-playbook.yaml -vv
+  735  vim 99-big-test-playbook.yaml
+  736  ansible-playbook 99-big-test-playbook.yaml -vv
+  737  vim 99-big-test-playbook.yaml
+  738  ansible-playbook 99-big-test-playbook.yaml -vv
+  739  vim 99-big-test-playbook.yaml
+  740  ansible-playbook 99-big-test-playbook.yaml -v
+  741  vim 99-big-test-playbook.yaml
+  742  ll
+  743  ll !
+  744  ll ~
+  745  vim 99-big-test-playbook.yaml
+  746  ansible-playbook 99-big-test-playbook.yaml -v
+  747  vim 99-big-test-playbook.yaml
+  748  ansible-playbook 99-big-test-playbook.yaml -v
+  749  vim 99-big-test-playbook.yaml
+  750  ansible-playbook 99-big-test-playbook.yaml -v
+  751  vim 99-big-test-playbook.yaml
+  752  ansible-playbook 99-big-test-playbook.yaml -v
+  753  vim 99-big-test-playbook.yaml
+  754  ansible-playbook 99-big-test-playbook.yaml -v
+  755  vim 99-big-test-playbook.yaml
+  756  ansible-playbook 99-big-test-playbook.yaml -v
+  757  vim 99-big-test-playbook.yaml
+  758  cd /etc/postfix/
+  759  git pull
+  760  git pull postfix master
+  761  git status
+  762  git checkout
+  763  git pull https://github.com/ilhadonorte/postfix.git
+  764  ll
+  765  git remote
+  766  git status --short
+  767  git checkout -p
+  768  rsync -avz root@192.168.5.251:/etc/yum.repos.d/gf.repo /root/ansible/files/8/
+  769  rsync -avz root@192.168.5.251:/etc/yum.repos.d/ /root/ansible/files/8/
+  770  rsync -avz root@192.168.5.251:/etc/yum.repos.d /root/ansible/files/8/
+  771  rsync -avz root@192.168.5.251:/etc/postfix /root/ansible/files/nj2/
+  772  rsync -avz root@192.168.5.251:/etc/dovecot /root/ansible/files/nj2/
+  773  cd ~/ansible
+  774  vim 99-big-test-playbook.yaml
+  775  ll
+  776  vim 04-copy-configs-and-restart-services.yaml 
+  777  vim 99-big-test-playbook.yaml
+  778  ansible mailer1 -m setup | grep mailer1
+  779  vim 99-big-test-playbook.yaml
+  780  ansible-playbook 99-big-test-playbook.yaml -v
+  781  vim 99-big-test-playbook.yaml
+  782  ansible-playbook 99-big-test-playbook.yaml -v
+  783  vim 99-big-test-playbook.yaml
+  784  ansible-playbook 99-big-test-playbook.yaml -v
+  785  vim 99-big-test-playbook.yaml
+  786  ansible-playbook 99-big-test-playbook.yaml -v
+  787  vim 99-big-test-playbook.yaml
+  788  ansible-playbook 99-big-test-playbook.yaml -v
+  789  ansible ansible1 -m setup | grep ansible1
+  790  ansible mailers -m setup | grep mailer
+  791  vim 99-big-test-playbook.yaml
+  792  ansible ansible1 -m setup | grep ble1
+  793  ansible ansible1 -m setup | grep fqdn
+  794  ansible ansible1 -m setup | grep nodename
+  795  vim 99-big-test-playbook.yaml
+  796  ansible-playbook 99-big-test-playbook.yaml -v
+  797  vim 99-big-test-playbook.yaml
+  798  ansible-playbook 99-big-test-playbook.yaml -v
+  799  vim 99-big-test-playbook.yaml
+  800  ansible-playbook 99-big-test-playbook.yaml -v
+  801  vim 99-big-test-playbook.yaml
+  802  ansible-playbook 99-big-test-playbook.yaml -v
+  803  vim 99-big-test-playbook.yaml
+  804  ansible-playbook 99-big-test-playbook.yaml -v
+  805  vim 99-big-test-playbook.yaml
+  806  ansible-playbook 99-big-test-playbook.yaml -v
+  807  vim 99-big-test-playbook.yaml
+  808  ansible-playbook 99-big-test-playbook.yaml -v
+  809  vim 99-big-test-playbook.yaml
+  810  ansible-playbook 99-big-test-playbook.yaml -v
+  811  ll
+  812  cd roles/
+  813  ansible-galaxy init postfix-dovecot
+  814  tree
+  815  cd postfix-dovecot/
+  816  tree
+  817  ll ..
+  818  cd ..
+  819  ll
+  820  cp 06-reboot-mailers.yaml 07-stackfocus.yaml
+  821  ansible mailers -m shell -a "poweroff"
+  822  vim hosts.txt 
+  823  ssh 192.168.5.250 -l sumare
+  824  tree
+  825  ll
+  826  ll group_vars/
+  827  vim group_vars/ungrouped 
+  828  vim hosts.txt 
+  829  vim group_vars/ungrouped 
+  830  vim hosts.txt 
+  831  ll
+  832  vim 07-stackfocus.yaml 
+  833  ansible-playbook 07-stackfocus.yaml -v
+  834  vim 07-stackfocus.yaml 
+  835  ansible-playbook 07-stackfocus.yaml -v
+  836  vim 07-stackfocus.yaml 
+  837  ansible-playbook 07-stackfocus.yaml -v
+  838  vim hosts.txt 
+  839  vim 07-stackfocus.yaml 
+  840  vim hosts.txt 
+  841  ansible-inventory --list
+  842  vim hosts.txt 
+  843  ansible-inventory --list
+  844  vim hosts.txt 
+  845  vim 07-stackfocus.yaml 
+  846  vim hosts.txt 
+  847  ansible-inventory --list
+  848  ansible-playbook 07-stackfocus.yaml -v
+  849  ansible-playbook 07-stackfocus.yaml -v --ask-become-pass
+  850  ansible all -m shell -a "poweroff"
+  851  poweroff
+  852  cd ansible
+  853  ll
+  854  ansible-playbook 99
+  855  ansible-playbook 99-big-test-playbook.yaml 
+  856  vim 99-big-test-playbook.yaml 
+  857  ansible-playbook 99-big-test-playbook.yaml --extra-vars "qual_server=ansible1"
+  858  ansible-playbook 99-big-test-playbook.yaml --extra-vars "qual_server=mailer2"
+  859  ansible-inventory --list
+  860  vim hosts.txt 
+  861  ansible-playbook 99-big-test-playbook.yaml --extra-vars "qual_server=ansible1"
+  862  ansible-inventory --list
+  863  ansible-playbook 99-big-test-playbook.yaml --extra-vars "qual_server=ansible1"
+  864  ansible-playbook 99-big-test-playbook.yaml --extra-vars "qual_server=mailer2"
+  865  ansible-playbook 99-big-test-playbook.yaml --extra-vars "qual_server=mailer1"
+  866  ansible-inventory --list
+  867  vim hosts.txt 
+  868  ansible-playbook 99-big-test-playbook.yaml --extra-vars "qual_server=ansible1"
+  869  vim 99-big-test-playbook.yaml 
+  870  vim criar_arquivos.yaml
+  871  vim 99-big-test-playbook.yaml 
+  872  ansible-playbook 99-big-test-playbook.yaml --extra-vars "qual_server=ansible1"
+  873  vim 99-big-test-playbook.yaml 
+  874  ansible-playbook 99-big-test-playbook.yaml --extra-vars "qual_server=ansible1"
+  875  vim criar_arquivos.yaml
+  876  vim 99-big-test-playbook.yaml 
+  877  ansible-playbook 99-big-test-playbook.yaml --extra-vars "qual_server=mailers"
+  878  vim 99-big-test-playbook.yaml 
+  879  cat ~/.vimrc 
+  880  ansible ansible1 -m setup | grep nodename
+  881  vim 99-big-test-playbook.yaml 
+  882  ansible-playbook 99-big-test-playbook.yaml --extra-vars "qual_server=mailers"
+  883  vim 99-big-test-playbook.yaml 
+  884  ansible-playbook 99-big-test-playbook.yaml --extra-vars "qual_server=mailers"
+  885  ansible all -m shell -a "poweroff"
+  886  vim dovecot.conf 
+  887  poweroff
+  888  date
+  889  ping ya.ru
+  890  ip a
+  891  mc
+  892  chvt 4
+  893  pstree
+  894  poweroff
+  895  wget https://dev.mysql.com/get/mysql80-community-release-el8-1.noarch.rpm
+  896  rpm -Uvh mysql80-community-release-el8-1.noarch.rpm 
+  897  yum repolist all | grep mysql
+  898  vim /etc/yum.repos.d/mysql-community.repo
+  899  yum install mysql-community-server -y
+  900  sudo yum-config-manager --disable mysql57-community
+  901  yum install yum-utils -y
+  902  sudo yum-config-manager --disable mysql57-community
+  903  yum-config-manager --enable mysql80-community
+  904  yum install mysql-community-server -y
+  905  dnf config-manager --enable mysql80-community
+  906  yum install mysql-community-server -y
+  907  vim /etc/yum.repos.d/mysql-community.repo
+  908  yum install mysql-community-server -y
+  909  yum module disable mysql
+  910  dnf install mysql-community-server -y
+  911  pstree
+  912  systemctl start mysqld
+  913  pstree
+  914  systemctl restart mysqld
+  915  mysql -uroot -p
+  916  ls
+  917  ls -l
+  918  mysql -uroot --database="sumare" --local-infile=1 < "/root/2020-02-15-backup-sumare.sql"> results_file
+  919  mysql -uroot -p --datab
+  920  mysql
+  921  mysql -uroot -p --database="sumare" --local-infile=1 
+  922  vim /etc/sysconfig/network-scripts/ifcfg-enp0s3
+  923  systemctl restart network
+  924  ifdown enp0s3 && ifup enp0s3
+  925  ip a
+  926  grep 'temporary password' /var/log/mysqld.log
+  927  pstree
+  928  setenforce 0 
+  929  grep 'temporary password' /var/log/mysqld.log
+  930  poweroff
+  931  ip a
+  932  dhclient enp0s3
+  933  ip a
+  934  pstree
+  935  history 
+  936  git status
+  937  history >history.txt

@@ -1,8 +1,9 @@
-ansible1 ansible_host=192.168.5.253
+ansible1  ansible_host=192.168.5.253 nameofnode=ansible1
+stackfocus  ansible_host=192.168.5.250  ansible_user=sumare  ansible_password=11qq22ww  ansible_connection=ssh
 
 [mailers]
-mailer1 ansible_host=192.168.5.251
-mailer2 ansible_host=192.168.5.252
+mailer1 ansible_host=192.168.5.251 nameofnode=mailer1
+mailer2 ansible_host=192.168.5.252 nameofnode=mailer2
 
 
 
